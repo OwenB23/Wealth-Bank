@@ -58,6 +58,8 @@ const inputCloseUsername = document.querySelector(".form__input--user");
 const inputClosePin = document.querySelector(".form__input--pin");
 
 const displayMovements = function (movements) {
+  containerMovements.innerHTML = "";
+
   movements.forEach(function (mov, i) {
     const type = mov > 0 ? "deposit" : "withdrawal";
 
@@ -74,3 +76,29 @@ const displayMovements = function (movements) {
 };
 
 displayMovements(account1.movements);
+
+//
+
+const JuliasData = {
+  age: [1, 2, 5, 12, 7, 9, 3, 2],
+};
+
+const checkDogs = function (ages) {
+  ages.forEach(function (age, n) {
+    if (age <= 1) {
+      console.log(
+        `Dog number ${n + 1} is ${age} year old and considered a Puppy`
+      );
+    } else if (age < 3) {
+      console.log(
+        `Dog number ${n + 1} is ${age} years old and considered a puppy`
+      );
+    } else {
+      console.log(
+        `Dog number ${n + 1} is ${age} years old and considered an adult`
+      );
+    }
+  });
+};
+
+checkDogs(JuliasData.age);
