@@ -2,7 +2,7 @@
 
 // Data
 const account1 = {
-  owner: "Jonas Schmedtmann",
+  owner: "Cameron Bond",
   movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
   interestRate: 1.2, // %
   pin: 1111,
@@ -16,7 +16,7 @@ const account2 = {
 };
 
 const account3 = {
-  owner: "Steven Thomas Williams",
+  owner: "Owen Fisher Bond",
   movements: [200, -200, 340, -300, -20, 50, 400, -460],
   interestRate: 0.7,
   pin: 3333,
@@ -57,6 +57,7 @@ const inputLoanAmount = document.querySelector(".form__input--loan-amount");
 const inputCloseUsername = document.querySelector(".form__input--user");
 const inputClosePin = document.querySelector(".form__input--pin");
 
+// DISPLAY MOVEMENTS
 const displayMovements = function (movements) {
   containerMovements.innerHTML = "";
 
@@ -77,28 +78,23 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
-//
-
-const JuliasData = {
-  age: [1, 2, 5, 12, 7, 9, 3, 2],
+// DISPLAY BALANCE
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `$${balance}`;
 };
 
-const checkDogs = function (ages) {
-  ages.forEach(function (age, n) {
-    if (age <= 1) {
-      console.log(
-        `Dog number ${n + 1} is ${age} year old and considered a Puppy`
-      );
-    } else if (age < 3) {
-      console.log(
-        `Dog number ${n + 1} is ${age} years old and considered a puppy`
-      );
-    } else {
-      console.log(
-        `Dog number ${n + 1} is ${age} years old and considered an adult`
-      );
-    }
+calcDisplayBalance(account1.movements);
+
+// DEFINE USERNAMES FROM ACCOUNTS
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(" ")
+      .map((name) => name[0])
+      .join("");
   });
 };
 
-checkDogs(JuliasData.age);
+createUsernames(accounts);
