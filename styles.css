@@ -18,9 +18,27 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   color: #444;
-  background-color: #f3f3f3;
+  background-color: #eee;
   height: 100vh;
-  padding: 2rem;
+}
+
+.test {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #111d4a;
+}
+
+.test h1 {
+  font-size: 50px;
+  color: #ffcf99;
+}
+
+.test h3 {
+  font-size: 30px;
+  color: #ffcf99;
 }
 
 nav {
@@ -28,15 +46,15 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
+  background-color: #111d4a;
+  padding: 2rem;
 }
 
 .welcome {
   font-size: 1.9rem;
   font-weight: 500;
-}
-
-.logo {
-  height: 5.25rem;
+  margin-right: 10px;
+  color: #ffcf99;
 }
 
 .login {
@@ -63,7 +81,7 @@ nav {
 }
 
 .login__input::placeholder {
-  color: #bbb;
+  color: #111d4a;
 }
 
 .login__btn {
@@ -73,6 +91,7 @@ nav {
   color: inherit;
   cursor: pointer;
   transition: all 0.3s;
+  color: #ffcf99;
 }
 
 .login__btn:hover,
@@ -92,8 +111,8 @@ nav {
   grid-template-columns: 4fr 3fr;
   grid-template-rows: auto repeat(3, 15rem) auto;
   gap: 2rem;
-
   opacity: 0;
+  padding-bottom: 20px;
   transition: all 1s;
 }
 
@@ -245,7 +264,7 @@ h2 {
 .form__label--loan {
   grid-row: 2;
 }
-/* End exceptions */
+/*  */
 
 .form__input {
   width: 100%;
